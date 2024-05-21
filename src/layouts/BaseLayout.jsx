@@ -11,7 +11,7 @@ export const BaseLayout = ({ children }) => {
 
 
   return (
-    <Box sx={{ display: 'flex', backgroundColor: "#e5efef", width: "100%", height: "100vh", flex: 1, justifyContent: "center", padding: 8 }} >
+    <Box sx={{ display: 'flex', backgroundColor: "#e5efef", minWidth: "100vw", minHeight: "100vh", flex: 1, justifyContent: "center", padding: { xs: 4, md: 8 },}} >
       <Box sx={{ position: "absolute", zIndex: 300 }} >
         {children}
       </Box>

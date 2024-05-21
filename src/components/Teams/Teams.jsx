@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
-import { Accordion, AccordionDetails, AccordionSummary, Typography, Table, TableHead, TableBody, TableRow, TableCell } from '@mui/material';
+import { Accordion, AccordionDetails, AccordionSummary, Typography, Table, TableHead, TableBody, TableRow, TableCell, Grid } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const Teams = () => {
@@ -36,10 +36,10 @@ const Teams = () => {
   }
 
   const renderStars = (score) => {
-    const maxStars = 5; 
-    const filledStars = Math.floor((score / 5) * maxStars); 
-    const remainderPercentage = (score / 5) * maxStars - filledStars; 
-    
+    const maxStars = 5;
+    const filledStars = Math.floor((score / 5) * maxStars);
+    const remainderPercentage = (score / 5) * maxStars - filledStars;
+
     const stars = [];
     for (let i = 0; i < filledStars; i++) {
       stars.push(<span key={i} style={{ color: 'gold' }}>★</span>);
@@ -50,7 +50,7 @@ const Teams = () => {
     for (let i = filledStars + 1; i < maxStars; i++) {
       stars.push(<span key={i} style={{ color: 'grey' }}>☆</span>);
     }
-  
+
     return (
       <span>
         {stars}
@@ -63,10 +63,16 @@ const Teams = () => {
       {teams.map((team, index) => (
         <Accordion key={index} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)} className="accordion">
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="h6">{team.title}</Typography>
-            <Typography>{renderStars(team.overall_score)}</Typography>
+            <Grid container spacing={2}>
+              <Grid item xs={12} sm={6}>
+                <Typography variant="h6">{team.title}</Typography>
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <Typography>{renderStars(team.overall_score)}</Typography>
+              </Grid>
+            </Grid>
           </AccordionSummary>
-          <AccordionDetails style={{ overflowY: 'auto', maxHeight: '300px' }}>
+          <AccordionDetails style={{ overflowY: 'auto', maxHeight: '300px' }} className="accordion-details">
             <div>
               <Typography><strong>Description:</strong> {team.description}</Typography>
               <Typography><strong>Total Employee Count:</strong> {team.total_employee_count}</Typography>
@@ -84,12 +90,12 @@ const Teams = () => {
                 <TableBody>
                   {team.employees.map(employee => (
                     <TableRow key={employee.email}>
-                      <TableCell>{employee.name}</TableCell>
-                      <TableCell>{employee.email}</TableCell>
-                      <TableCell>{employee.title}</TableCell>
-                      <TableCell>{employee.current_score}</TableCell>
-                      <TableCell>{employee.lessons_taken}</TableCell>
-                      <TableCell>{employee.skills_being_developed.join(', ')}</TableCell>
+                      <TableCell className="table-cell">{employee.name}</TableCell>
+                      <TableCell className="table-cell">{employee.email}</TableCell>
+                      <TableCell className="table-cell">{employee.title}</TableCell>
+                      <TableCell className="table-cell">{employee.current_score}</TableCell>
+                      <TableCell className="table-cell">{employee.lessons_taken}</TableCell>
+                      <TableCell className="table-cell">{employee.skills_being_developed.join(', ')}</TableCell>
                     </TableRow>
                   ))}
                 </TableBody>

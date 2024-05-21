@@ -133,6 +133,29 @@ code {
   align-items: center;
 }
 
+@media (max-width: 600px) {
+  .accordion .MuiAccordionSummary-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .accordion .MuiAccordionSummary-content > *:first-child {
+    margin-bottom: 10px;
+  }
+
+  .teams-container {
+    margin: 10px;
+  }
+
+  .accordion-details {
+    max-height: none; /* Remove fixed height for smaller screens */
+  }
+
+  .table-cell {
+    padding: 2px;
+  }
+}
+
 .loader {
   font-size: 20px;
   text-align: center;
@@ -145,3 +168,5 @@ code {
   text-align: center;
   margin-top: 50px;
 }
+
+
