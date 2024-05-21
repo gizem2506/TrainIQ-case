@@ -19,6 +19,7 @@ import { DazeAccordion } from '../components/elements/Accordion';
 import { BaseLayout } from './BaseLayout';
 import { DazeIconMenu } from '../components/elements/IconMenu';
 import { useNavigate } from 'react-router-dom';
+import { Avatar } from '@mui/material';
 
 
 const drawerWidth = 240;
@@ -77,7 +78,7 @@ export const MainLayout = () => {
 
   const Pages = [
 
-    { name: "Ana Ekran", icon: <HomeIcon fontSize='small' />, tag: "main", sub: [], disabled: false },
+    { name: "Home", icon: <HomeIcon fontSize='small' />, tag: "main", sub: [], disabled: false },
     { name: "Skills", icon: <PersonIcon fontSize='small' />, tag: "skills", sub: [], disabled: false, },
     { name: "Teams", icon: <PersonIcon fontSize='small' />, tag: "teams", sub: [], disabled: false },
     {
@@ -132,33 +133,36 @@ export const MainLayout = () => {
         </AppBar>
         <Drawer variant="permanent" open={open} >
           <Box sx={{ height: 40 }} ></Box>
-          <Box sx={{ height: 30, width: "100%", flexDirection: "row", justifyContent: "flex-start", alignItems: "center", display: "flex", overflow: "hidden", pt: 3, pb: 3 }} >
+          <Box sx={{ height: 30, width: "100%", flexDirection: "row", justifyContent: "flex-start", alignItems: "center", display: "flex", overflow: "hidden", pt: 3, pb: 3, marginLeft: 1 }} >
+            <Avatar sx={{ width: 40, height: 40 }} src='/logo193.jpeg' />
 
-
+            <Typography sx={{ fontWeight: "bold",textAlign:"center" }} variant="h7" noWrap component="div">
+              TrainIQ             
+               </Typography>
           </Box>
           <Divider />
           <List>
 
 
             {Pages.map((d, i) => {
-                return (
-                  <React.Fragment key={i}>
+              return (
+                <React.Fragment key={i}>
 
-                    <DazeAccordion hidearrow={d.tag ? true : false} onClick={() => d.tag ? ClickButton(d.tag) : {}} disabled={d.disabled} icon={d.icon} title={d.name} >
-                      {d.sub.map((s, j) => {
-                          return (
-                            <React.Fragment key={j} >
-                              <DazeIconMenu onClick={() => ClickButton(s.tag, s.name)} title={s.name} icon={s.icon} />
+                  <DazeAccordion hidearrow={d.tag ? true : false} onClick={() => d.tag ? ClickButton(d.tag) : {}} disabled={d.disabled} icon={d.icon} title={d.name} >
+                    {d.sub.map((s, j) => {
+                      return (
+                        <React.Fragment key={j} >
+                          <DazeIconMenu onClick={() => ClickButton(s.tag, s.name)} title={s.name} icon={s.icon} />
 
-                            </React.Fragment>
-                          )
-                        })
-                      }
-                    </DazeAccordion>
-                    <Divider />
-                  </React.Fragment>
-                )
-              })
+                        </React.Fragment>
+                      )
+                    })
+                    }
+                  </DazeAccordion>
+                  <Divider />
+                </React.Fragment>
+              )
+            })
             }
           </List>
         </Drawer>

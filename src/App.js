@@ -16,15 +16,12 @@ const App = () => {
         <Routes>
           <Route element={<BaseLayout />} >
             <Route path="/" element={<MainLayout />}  >
-
+              <Route index element={<MainPage />} />
               <Route path="main" element={<MainPage />} />
               <Route path="inprogress" element={<InProgressCourses />} />
               <Route path="upcoming" element={<UpcomingCourses />} />
               <Route path="skills" element={<Skills />} />
               <Route path="teams" element={<Team />} />
-
-
-
             </Route>
           </Route>
         </Routes>

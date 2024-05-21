@@ -61,13 +61,7 @@ code {
   font-size: 1.5rem;
 }
 
-.loader {
-  color: #007bff;
-}
 
-.error {
-  color: red;
-}
 
 .employee-list-title {
   text-align: center;
@@ -124,4 +118,30 @@ code {
   transition: box-shadow 0.3s;
   padding: 10px;
 
+}
+.teams-container {
+  margin: 20px;
+}
+
+.accordion {
+  margin-bottom: 10px; /* Adds space between accordions */
+}
+
+.accordion .MuiAccordionSummary-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.loader {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.error {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  margin-top: 50px;
 }

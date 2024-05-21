@@ -34,21 +34,19 @@ const Teams = () => {
   if (error) {
     return <div className="error">Error: {error.message}</div>;
   }
+
   const renderStars = (score) => {
-    const maxStars = 5; // Maximum number of stars
-    const filledStars = Math.floor((score / 100) * maxStars); // Calculate filled stars based on score percentage
-    const remainderPercentage = (score / 100) * maxStars - filledStars; // Calculate remaining percentage for the partially filled star
+    const maxStars = 5; 
+    const filledStars = Math.floor((score / 5) * maxStars); 
+    const remainderPercentage = (score / 5) * maxStars - filledStars; 
     
     const stars = [];
-    // Render fully filled stars
     for (let i = 0; i < filledStars; i++) {
       stars.push(<span key={i} style={{ color: 'gold' }}>★</span>);
     }
-    // Render partially filled star if remainderPercentage is greater than 0
     if (remainderPercentage > 0 && filledStars < maxStars) {
       stars.push(<span key={filledStars} style={{ color: 'gold', width: `${remainderPercentage * 16}px`, overflow: 'hidden' }}>★</span>);
     }
-    // Render empty stars
     for (let i = filledStars + 1; i < maxStars; i++) {
       stars.push(<span key={i} style={{ color: 'grey' }}>☆</span>);
     }
@@ -59,16 +57,16 @@ const Teams = () => {
       </span>
     );
   };
+
   return (
     <div className="teams-container">
       {teams.map((team, index) => (
-        <Accordion key={index} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
+        <Accordion key={index} expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)} className="accordion">
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-            <Typography variant="h6">{team.title}
-            <Typography>{renderStars(team.overall_score)}</Typography></Typography>
-
+            <Typography variant="h6">{team.title}</Typography>
+            <Typography>{renderStars(team.overall_score)}</Typography>
           </AccordionSummary>
-          <AccordionDetails style={{ overflowY: 'auto', maxHeight: '300px' }}> 
+          <AccordionDetails style={{ overflowY: 'auto', maxHeight: '300px' }}>
             <div>
               <Typography><strong>Description:</strong> {team.description}</Typography>
               <Typography><strong>Total Employee Count:</strong> {team.total_employee_count}</Typography>

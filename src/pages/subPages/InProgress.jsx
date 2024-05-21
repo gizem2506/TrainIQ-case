@@ -55,7 +55,6 @@ export const InProgressCourses = () => {
                         sx={{
                             backgroundColor:"#2b3e3d",
                             color: '#fff',
-                            textAlign: 'center',
                             boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
                             transition: 'transform 0.3s',
                             '&:hover': {
@@ -64,31 +63,31 @@ export const InProgressCourses = () => {
                         }}
                     >
                         <CardContent>
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px', marginBottom: '10px' }}>
+                            <Box sx={{ display: 'flex',  gap: '5px', marginBottom: '10px' }}>
                                 <AssignmentIndIcon sx={{ fontSize: 24 }} />
                                 <Typography variant="body2"  component="p">
                                     {course.assigned_to}
                                 </Typography>
                             </Box>
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px', marginBottom: '10px' }}>
+                            <Box sx={{ display: 'flex',  gap: '5px', marginBottom: '10px' }}>
                                 <DescriptionIcon sx={{ fontSize: 18 }} />
                                 <Typography variant="body2" component="p">
                                     {course.title}
                                 </Typography>
                             </Box>
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px', marginBottom: '10px' }}>
+                            <Box sx={{ display: 'flex', gap: '5px', marginBottom: '10px' }}>
                                 <DescriptionIcon sx={{ fontSize: 18 }} />
                                 <Typography variant="body2" component="p">
                                     {course.description}
                                 </Typography>
                             </Box>
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px', marginBottom: '10px' }}>
+                            <Box sx={{ display: 'flex',  gap: '5px', marginBottom: '10px' }}>
                                 <EventIcon sx={{ fontSize: 18 }} />
                                 <Typography variant="body2" component="p">
                                     {course.due_date}
                                 </Typography>
                             </Box>
-                            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px' }}>
+                            <Box sx={{ display: 'flex', gap: '5px' }}>
                                 <CheckCircleOutlineIcon sx={{ fontSize: 18 }} />
                                 <Typography variant="body2" component="p">
                                     {course.status}

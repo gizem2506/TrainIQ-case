@@ -18,7 +18,7 @@ export const BaseLayout = ({ children }) => {
       {outlet}
 
       <Box sx={{ width: '100%', height: 50, display: 'flex', justifyContent: 'center', color: '#ccc', backgroundColor:"#18736f", alignItems: 'center', position: 'fixed', bottom: 0, zIndex: 888, borderTop: 2 }} >
-        <Avatar sx={{ width: 26, height: 26 }} src='/logo192.png' />
+        <Avatar sx={{ width: 26, height: 26 }} src='/logo193.jpeg' />
         <Typography color={"white"} sx={{ marginLeft: 2 }} variant='subtitle2' >
         TrainIQ © {date.getFullYear()}
         </Typography>

@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import App from './App';
-
 import CssBaseline from '@mui/material/CssBaseline';
-
-import { BrowserRouter } from "react-router-dom";
 import { SnackbarProvider } from 'notistack';
 
 
@@ -13,12 +9,12 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
 root.render(
- 
-          <CssBaseline>
-            <SnackbarProvider autoHideDuration={3000} maxSnack={3}>
-              <App />
-            </SnackbarProvider>
-          </CssBaseline>
+
+  <CssBaseline>
+    <SnackbarProvider autoHideDuration={3000} maxSnack={3}>
+      <App />
+    </SnackbarProvider>
+  </CssBaseline>
 
 
 );
