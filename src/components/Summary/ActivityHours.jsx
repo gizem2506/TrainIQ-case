@@ -3,7 +3,7 @@ import axios from 'axios';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
- const ActivityHours = () => {
+const ActivityHours = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -35,7 +35,7 @@ import {
   }
 
   return (
-    <div style={{marginTop:20, backgroundColor: '#f9f9f9', padding: '20px', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+    <div style={{ marginTop: 20, backgroundColor: '#f9f9f9', padding: '20px', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
       <h3 style={{ marginBottom: '20px', color: '#333' }}>Activity Hours</h3>
       <ResponsiveContainer width="100%" height={160}>
         <BarChart

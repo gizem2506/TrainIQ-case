@@ -4,10 +4,7 @@ import App from './App';
 import CssBaseline from '@mui/material/CssBaseline';
 import { SnackbarProvider } from 'notistack';
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
-
 root.render(
 
   <CssBaseline>

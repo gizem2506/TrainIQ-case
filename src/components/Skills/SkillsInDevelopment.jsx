@@ -10,12 +10,11 @@ const SkillsInDevelopment = () => {
   const [devskills, setDevSkills] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [outerRadius, setOuterRadius] = useState(140); 
+  const [outerRadius, setOuterRadius] = useState(140);
 
   useEffect(() => {
     axios.get('https://demotrainiq.com/case/dashboard')
       .then(response => {
-        console.log('API response:', response.data);
         if (Array.isArray(response.data.data.skills_in_development)) {
           setDevSkills(response.data.data.skills_in_development);
         } else {
@@ -32,9 +31,9 @@ const SkillsInDevelopment = () => {
 
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        setOuterRadius(80); 
+        setOuterRadius(80);
       } else {
-        setOuterRadius(140); 
+        setOuterRadius(140);
       }
     };
 

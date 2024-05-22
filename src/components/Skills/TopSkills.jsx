@@ -10,12 +10,11 @@ const TopSkills = () => {
   const [topskills, setTopskills] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [outerRadius, setOuterRadius] = useState(150); // Default radius for web
+  const [outerRadius, setOuterRadius] = useState(150);
 
   useEffect(() => {
     axios.get('https://demotrainiq.com/case/dashboard')
       .then(response => {
-        console.log('API response:', response.data);
         if (Array.isArray(response.data.data.top_skills)) {
           setTopskills(response.data.data.top_skills);
         } else {
@@ -30,22 +29,18 @@ const TopSkills = () => {
         setLoading(false);
       });
 
-    // Function to handle resizing
     const handleResize = () => {
       if (window.innerWidth <= 768) {
-        setOuterRadius(100); // Mobile view
+        setOuterRadius(100);
       } else {
-        setOuterRadius(150); // Web view
+        setOuterRadius(150);
       }
     };
 
-    // Initial call to set the correct radius
     handleResize();
 
-    // Add event listener for window resize
     window.addEventListener('resize', handleResize);
 
-    // Cleanup event listener on component unmount
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -60,8 +55,8 @@ const TopSkills = () => {
   }
 
   return (
-    <div style={{ backgroundColor: '#f9f9f9',  borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-      <h3 style={{ marginBottom: '20px', color: '#333',padding:"8px" }}>Top Skills</h3>
+    <div style={{ backgroundColor: '#f9f9f9', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
+      <h3 style={{ marginBottom: '20px', color: '#333', padding: "8px" }}>Top Skills</h3>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <Pie

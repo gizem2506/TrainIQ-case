@@ -25,7 +25,7 @@ const EmployeeList = () => {
             <Card>
               <CardBody>
                 <CardText>
-                <div className="employee-info">
+                  <div className="employee-info">
                     <div className="info-label"><FaUser /></div>
                     <div className="info-value">{employee.name}</div>
                   </div>

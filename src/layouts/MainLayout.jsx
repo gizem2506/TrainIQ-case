@@ -1,5 +1,3 @@
-
-
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -13,7 +11,6 @@ import Divider from '@mui/material/Divider';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import PersonIcon from '@mui/icons-material/Person';
-import VerifiedUserIcon from '@mui/icons-material/VerifiedUser';
 import HomeIcon from '@mui/icons-material/Home';
 import { DazeAccordion } from '../components/elements/Accordion';
 import { BaseLayout } from './BaseLayout';
@@ -24,6 +21,7 @@ import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
 import LoopIcon from '@mui/icons-material/Loop';
 import UpcomingIcon from '@mui/icons-material/Upcoming';
 import AssessmentIcon from '@mui/icons-material/Assessment';
+
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -138,9 +136,9 @@ export const MainLayout = () => {
           <Box sx={{ height: 30, width: "100%", flexDirection: "row", justifyContent: "flex-start", alignItems: "center", display: "flex", overflow: "hidden", pt: 3, pb: 3, marginLeft: 1 }} >
             <Avatar sx={{ width: 40, height: 40 }} src='/logo193.jpeg' />
 
-            <Typography sx={{ fontWeight: "bold",textAlign:"center" }} variant="h7" noWrap component="div">
-              TrainIQ             
-               </Typography>
+            <Typography sx={{ fontWeight: "bold", textAlign: "center" }} variant="h7" noWrap component="div">
+              TrainIQ
+            </Typography>
           </Box>
           <Divider />
           <List>

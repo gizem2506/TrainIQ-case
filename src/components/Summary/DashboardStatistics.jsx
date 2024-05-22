@@ -30,12 +30,12 @@ const DashboardStatistics = () => {
     }
 
     return (
-        <Box 
-            sx={{ 
-                display: 'grid', 
-                gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, 
-                gap: '40px', 
-                marginRight: '20px' 
+        <Box
+            sx={{
+                display: 'grid',
+                gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' },
+                gap: '40px',
+                marginRight: '20px'
             }}
         >
             <Box sx={{

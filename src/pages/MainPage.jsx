@@ -8,7 +8,7 @@ import { Buttons } from '../components/elements/Buttons';
 export const MainPage = () => {
   return (
     <SubLayout>
-      <Buttons/>
+      <Buttons />
       <DashboardStatistics />
       <ActivityHours />
       <EmployeeList />

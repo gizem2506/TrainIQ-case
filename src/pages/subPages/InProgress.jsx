@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Box, Typography, Card, CardContent } from '@mui/material';
 import { AssignmentInd as AssignmentIndIcon, Description as DescriptionIcon, Event as EventIcon, CheckCircleOutline as CheckCircleOutlineIcon } from '@mui/icons-material';
 import { SubLayout } from '../../layouts/SubLayout';
+import SubtitlesIcon from '@mui/icons-material/Subtitles';
 
 
 export const InProgressCourses = () => {
@@ -70,7 +71,7 @@ export const InProgressCourses = () => {
                                 </Typography>
                             </Box>
                             <Box sx={{ display: 'flex',  gap: '5px', marginBottom: '10px' }}>
-                                <DescriptionIcon sx={{ fontSize: 18 }} />
+                                <SubtitlesIcon sx={{ fontSize: 18 }} />
                                 <Typography variant="body2" component="p">
                                     {course.title}
                                 </Typography>

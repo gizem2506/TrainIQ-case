@@ -4,8 +4,8 @@ import './index.css';
 import { MainPage } from './pages/MainPage';
 import { BaseLayout } from './layouts/BaseLayout';
 import { MainLayout } from './layouts/MainLayout';
-import { InProgressCourses } from './pages/subPages/InProgress';
-import UpcomingCourses from './pages/subPages/UpComing';
+import { InProgressCourses } from './pages/SubPages/InProgress';
+import UpcomingCourses from './pages/SubPages/UpComing';
 import { Skills } from './pages/Skills';
 import { Team } from './pages/Team';
 

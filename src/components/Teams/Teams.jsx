@@ -12,7 +12,6 @@ const Teams = () => {
   useEffect(() => {
     axios.get('https://demotrainiq.com/case/dashboard')
       .then(response => {
-        console.log('API response:', response.data);
         setTeams(response.data.data.teams);
         setLoading(false);
       })
