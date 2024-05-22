@@ -20,8 +20,10 @@ import { BaseLayout } from './BaseLayout';
 import { DazeIconMenu } from '../components/elements/IconMenu';
 import { useNavigate } from 'react-router-dom';
 import { Avatar } from '@mui/material';
-
-
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import LoopIcon from '@mui/icons-material/Loop';
+import UpcomingIcon from '@mui/icons-material/Upcoming';
+import AssessmentIcon from '@mui/icons-material/Assessment';
 const drawerWidth = 240;
 
 const openedMixin = (theme) => ({
@@ -78,13 +80,13 @@ export const MainLayout = () => {
 
   const Pages = [
 
-    { name: "Home", icon: <HomeIcon fontSize='small' />, tag: "main", sub: [], disabled: false },
-    { name: "Skills", icon: <PersonIcon fontSize='small' />, tag: "skills", sub: [], disabled: false, },
+    { name: "Statistics", icon: <HomeIcon fontSize='small' />, tag: "main", sub: [], disabled: false },
+    { name: "Skills", icon: <AssessmentIcon fontSize='small' />, tag: "skills", sub: [], disabled: false, },
     { name: "Teams", icon: <PersonIcon fontSize='small' />, tag: "teams", sub: [], disabled: false },
     {
-      name: "Courses", icon: <PersonIcon fontSize='small' />, tag: "", sub: [
-        { name: "In Progress Courses", icon: <VerifiedUserIcon fontSize='small' />, tag: "inprogress" },
-        { name: "Upcoming Courses", icon: <VerifiedUserIcon fontSize='small' />, tag: "upcoming" },
+      name: "Courses", icon: <AccountBalanceIcon fontSize='small' />, tag: "", sub: [
+        { name: "In Progress Courses", icon: <LoopIcon fontSize='small' />, tag: "inprogress" },
+        { name: "Upcoming Courses", icon: <UpcomingIcon fontSize='small' />, tag: "upcoming" },
       ], disabled: false,
 
     }
