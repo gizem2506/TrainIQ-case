@@ -30,8 +30,14 @@ const DashboardStatistics = () => {
     }
 
     return (
-        <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '40px', marginRight: '20px' }}>
-
+        <Box 
+            sx={{ 
+                display: 'grid', 
+                gridTemplateColumns: { xs: '1fr', md: 'repeat(3, 1fr)' }, 
+                gap: '40px', 
+                marginRight: '20px' 
+            }}
+        >
             <Box sx={{
                 width: '100%', backgroundColor: "white", borderRadius: '8px',
                 boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
@@ -43,7 +49,6 @@ const DashboardStatistics = () => {
                     <Typography variant="h6" sx={{ color: "black", fontWeight: "bold" }} >
                         {dashboardData.totalCompletedCourses}
                     </Typography>
-
                 </CardContent>
             </Box>
             <Box sx={{
@@ -57,7 +62,6 @@ const DashboardStatistics = () => {
                     <Typography variant="h6" sx={{ color: "black", fontWeight: "bold" }} >
                         {dashboardData.averageEmployeeScore}
                     </Typography>
-
                 </CardContent>
             </Box>
             <Box sx={{
@@ -71,10 +75,8 @@ const DashboardStatistics = () => {
                     <Typography variant="h6" sx={{ color: "black", fontWeight: "bold" }} >
                         {dashboardData.totalEmployees}
                     </Typography>
-
                 </CardContent>
             </Box>
-
         </Box>
     );
 };
