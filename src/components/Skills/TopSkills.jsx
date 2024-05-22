@@ -10,6 +10,7 @@ const TopSkills = () => {
   const [topskills, setTopskills] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [outerRadius, setOuterRadius] = useState(150); // Default radius for web
 
   useEffect(() => {
     axios.get('https://demotrainiq.com/case/dashboard')
@@ -28,6 +29,26 @@ const TopSkills = () => {
         setError(error);
         setLoading(false);
       });
+
+    // Function to handle resizing
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setOuterRadius(100); // Mobile view
+      } else {
+        setOuterRadius(150); // Web view
+      }
+    };
+
+    // Initial call to set the correct radius
+    handleResize();
+
+    // Add event listener for window resize
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   if (loading) {
@@ -49,7 +70,7 @@ const TopSkills = () => {
             nameKey="skill"
             cx="50%"
             cy="50%"
-            outerRadius={150}
+            outerRadius={outerRadius}
             fill="#8884d8"
             label
           >

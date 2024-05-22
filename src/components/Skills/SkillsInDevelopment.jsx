@@ -10,6 +10,7 @@ const SkillsInDevelopment = () => {
   const [devskills, setDevSkills] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [outerRadius, setOuterRadius] = useState(140); 
 
   useEffect(() => {
     axios.get('https://demotrainiq.com/case/dashboard')
@@ -28,6 +29,20 @@ const SkillsInDevelopment = () => {
         setError(error);
         setLoading(false);
       });
+
+    const handleResize = () => {
+      if (window.innerWidth <= 768) {
+        setOuterRadius(80); 
+      } else {
+        setOuterRadius(140); 
+      }
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
   }, []);
 
   if (loading) {
@@ -40,7 +55,7 @@ const SkillsInDevelopment = () => {
 
   return (
     <div style={{ backgroundColor: '#f9f9f9', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-      <h3 style={{ marginBottom: '20px', color: '#333' ,padding:"8px"}}>Skills in Development</h3>
+      <h3 style={{ marginBottom: '20px', color: '#333', padding: '8px' }}>Skills in Development</h3>
       <ResponsiveContainer width="100%" height={400}>
         <PieChart>
           <Pie
@@ -49,7 +64,7 @@ const SkillsInDevelopment = () => {
             nameKey="skill"
             cx="50%"
             cy="50%"
-            outerRadius={140}
+            outerRadius={outerRadius}
             fill="#8884d8"
             label
           >
